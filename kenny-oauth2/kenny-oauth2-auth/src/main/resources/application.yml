@@ -1,0 +1,25 @@
+server:
+  port: 9401
+spring:
+  profiles:
+    active: dev
+  application:
+    name: kenny-oauth2-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.5.119:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    database: 0
+    port: 6379
+    host: 192.168.5.119
+    password: Linux1234
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 使用keytool生成RSA证书jwt.jks，复制到resource目录下，在JDK的bin目录下使用如下命令即可； keytool -genkey -alias jwt -keyalg RSA -keystore jwt.jks
